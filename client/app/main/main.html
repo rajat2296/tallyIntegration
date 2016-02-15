@@ -1,0 +1,126 @@
+<div class="dialog-background" ng-show="progressflag">
+  <uib-progressbar class="dialog-loading-icon"  max="100" animate="true" class="progress-striped-active" value="progressvalue" >{{progressvalue}}%completed</uib-progressbar>
+</div>
+<div>
+<div ng-include="'components/navbar/navbar.html'"></div>
+<header class="hero-unit" id="banner">
+  <div class="container text-center">
+   <!-- <img src="assets/images/yeoman.png" alt="I'm Yeoman">-->
+    <input type="text" width="200px" name="url" ng-model="hosturl">
+    <button type="button" class="btn btn-primary" ng-click="connect()">Connect</button>
+    <br>
+    <span ng-show="connectflag==1">Connected :)</span>
+    <span ng-show="connectflag==-1">Oops! Error in connection</span>
+  </div>
+</header>
+<br/>
+<div class="col-md-3"></div>
+<div class="col-md-6">
+
+  <!--<fieldset>
+  <legend>Select Ledger For Heads</legend>
+  <form name="myform" class="well form" novalidate>
+
+   <!-- <div class="form-group" ng-class="{ 'has-error': myform.date.$touched && myform.date.$invalid }">
+      <label></label>
+      <input type="date" name="date" class="form-control" ng-model="tally.date"
+             required>
+      <span ng-show="myform.date.$error.required && myform.date.$touched" class="help-block">please enter Voucher Date</span>
+    </div>
+
+
+    <div class="form-group" ng-class="{ 'has-error': myform.saleheader.$touched && myform.saleheader.$invalid }">
+      <label>Sale Amount</label>
+      <select name="saleheader" class="form-control" ng-model="heads.saleheader"
+             required>
+       <option value="Sales">Sales</option>
+       <option value="Purchase">Purchase</option>
+      </select>
+      <span ng-show="myform.saleheader.$error.required && myform.saleheader.$touched" class="help-block">please enter your name</span>
+    </div>
+
+ <!--   <div class="form-group" ng-class="{ 'has-error': myform.category.$touched && myform.category.$invalid }">
+      <label>Bank/Cash</label>
+      <select name="category" class="form-control" ng-model="tally.ledger"
+             required>
+      <option value="Bank">Bank</option>
+      <option value="Cash">Cash</option>
+      </select>
+      <span ng-show="myform.category.$error.required && myform.category.$touched" class="help-block">
+      Please enter the category
+      </span>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': myform.servicechargeheader.$touched && myform.servicechargeheader.$invalid }">
+      <label>Service Charge</label>
+      <select name="servicechargeheader" class="form-control" ng-model="heads.servicechargeheader" required>
+        <option value="Service Charge">Service Charge</option>
+        <option value="Profit & Loss A/c">Profit & Loss A/c</option>
+      </select>
+      <span ng-show="myform.servicechargeheader.$error.required && myform.servicechargeheader.$touched" class="help-block">
+      Please enter the amount
+      </span>
+    </div>
+
+      <div class="form-group" ng-class="{ 'has-error': myform.vatheader.$touched && myform.vatheader.$invalid }">
+        <label>VAT</label>
+        <select name="vatheader" class="form-control" ng-model="heads.vatheader"
+          required>
+         <option value="Vat @5%">Vat @5%</option>
+         <option value="Vat @10%">Vat @10%</option>
+         </select>
+      <span ng-show="myform.servicecharge.$error.required && myform.servicecharge.$touched" class="help-block">
+      Please enter the Service Charge
+      </span>
+    </div>
+
+    <div class="form-group">
+      <button type="button" ng-click="addVoucher()" class="btn btn-danger" ng-disabled="myform.$invalid">Transfer Bills</button>
+    </div>
+  </form>-->
+
+
+
+  <form role="form" name="myform" novalidate>
+
+  <div class="form-group" ng-class="{ 'has-error': myform.startDate.$touched && myform.startDate.$invalid }">
+  <label>Start Date</label>
+   <input type="date" name="startDate" class="form-control" ng-model="form.startDate" required>
+    <span ng-show="myform.startDate.$error.required && myform.startDate.$touched" class="help-block">Please Enter Start Date</span>
+  </div>
+
+    <div class="form-group" ng-class="{ 'has-error': myform.endDate.$touched && myform.endDate.$invalid }">
+      <label>End Date</label>
+      <input type="date" name="endDate" ng-model="form.endDate" class="form-control" required>
+      <span ng-show="myform.endDate.$error.required && myform.endDate.$touched" class="help-block">Please Enter end Date</span>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': myform.option.$touched && myform.option.$invalid }">
+      <label>Option</label>
+      <select class="form-control" name="option" ng-model="form.option" required>
+       <option value="all" selected>All</option>
+       <option value="Selected Invoice">Selected Invoice</option>
+      </select>
+      <span ng-show="myform.option.$error.required && myform.option.$touched" class="help-block">Please Select an option</span>
+    </div>
+
+    <span ng-show="form.option =='Selected Invoice'">
+    <div class="form-group">
+      <label>Invoice from</label>
+      <input type="number" class="form-control" name="invoicefrom" ng-model="form.invoicefrom">
+    </div>
+
+    <div class="form-group">
+      <label>Invoice To</label>
+      <input type="number" class="form-control" name="invoiceto" ng-model="form.invoiceto">
+    </div>
+    </span>
+  <br/>
+  <button type="button" ng-click="addLedger()" class="btn btn-danger" ng-disabled="myform.$invalid">Transfer Bills</button>
+   </form>
+  <br/>
+   <span ng-show="flag==1"><b><i>Records Processed:{{tallypush.length}}<br/>Vouchers created:{{created}}({{(created/tallypush.length)*100}}%)</i></b></span>
+  </div>
+<div class="col-md-3"></div>
+</footer>
+</div>
