@@ -91,7 +91,7 @@
 
     <div class="form-group" ng-class="{ 'has-error': myform.endDate.$touched && myform.endDate.$invalid }">
       <label>End Date</label>
-      <input type="date" name="endDate" ng-model="form.endDate" class="form-control" required>
+      <input type="date" name="endDate" ng-model="form.endDate" class="form-control" min="form.startDate" required>
       <span ng-show="myform.endDate.$error.required && myform.endDate.$touched" class="help-block">Please Enter end Date</span>
     </div>
 
@@ -122,5 +122,6 @@
    <span ng-show="flag==1"><b><i>Records Processed:{{tallypush.length}}<br/>Vouchers created:{{created}}({{(created/tallypush.length)*100}}%)</i></b></span>
   </div>
 <div class="col-md-3"></div>
+<footer>
 </footer>
 </div>

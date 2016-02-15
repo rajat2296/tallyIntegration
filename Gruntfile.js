@@ -3,7 +3,6 @@
 
 module.exports = function (grunt) {
 
- // var pkg = require('./package.json');
 
   var localConfig;
   try {
@@ -500,7 +499,7 @@ module.exports = function (grunt) {
           ]
         }
       }
-    },
+    }
   });
 
   // Used for delaying livereload until after server has restarted

@@ -11,7 +11,7 @@ router.post('/', controller.create);
 router.put('/:id', controller.update);
 router.patch('/:id', controller.update);
 router.delete('/:id', controller.destroy);
-router.post('/voucher',controller.createVoucher)
+router.post('/voucher',controller.createVoucher);
 router.post('/reports',controller.reports);
 router.post('/connect',controller.testConnection);
 

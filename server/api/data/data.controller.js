@@ -78,7 +78,7 @@ exports.createVoucher = function(req,res){
     },
     function (error, response, body) {
       if (!error && response.statusCode == 200) {
-        console.log(body)
+        console.log(body);
         parser(body, function (err, result) {
           console.log(result);
           res.send(JSON.stringify(result));
@@ -86,7 +86,7 @@ exports.createVoucher = function(req,res){
       }
     }
   );
-}
+};
 
 exports.reports = function(req,res){
   var postdata=req.body.data;
@@ -98,7 +98,7 @@ exports.reports = function(req,res){
       },
     function ( error,response, body) {
       if (!error && response.statusCode == 200) {
-        console.log(body)
+        console.log(body);
         parser(body, function (err, result) {
           console.log(result);
           res.send(JSON.stringify(result));
@@ -108,7 +108,7 @@ exports.reports = function(req,res){
       {console.log(error);}
     }
   );
-}
+};
 
 exports.testConnection=function(req,res){
   request.post(
@@ -128,7 +128,7 @@ exports.testConnection=function(req,res){
         res.status(500).send(error);}
     }
   );
-}
+};
 
 function handleError(res, err) {
   return res.status(500).send(err);

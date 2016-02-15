@@ -67,13 +67,13 @@ angular.module('tallyprojectApp')
           ledgername: 'vat',
           amount: 25
         }]
-      },
+      }
     ];
 
     $scope.tallypush = [];
     $scope.form = {};
 
-  for (var i = 9; i <= 1000; i++) {
+  for (var i = 9; i <= 100; i++) {
 
     var sample = {
       date: new Date('April 1, 2015'),
@@ -82,7 +82,7 @@ angular.module('tallyprojectApp')
         ledgername: 'vat',
         amount: 25
       }]
-    }
+    };
     $scope.tally.push(sample);
   }
 
@@ -91,7 +91,7 @@ angular.module('tallyprojectApp')
       var message = {
         data: "<ENVELOPE></ENVELOPE>",
         url: $scope.hosturl
-      }
+      };
 
       $http({
         method: 'POST',
@@ -106,7 +106,7 @@ angular.module('tallyprojectApp')
         console.log("error");
         $scope.connectflag = -1;
       });
-    }
+    };
 
     $scope.addLedger = function () {
 
@@ -125,7 +125,7 @@ angular.module('tallyprojectApp')
           }
         }
 
-      };
+      }
 
       console.log("out");
 
@@ -224,7 +224,7 @@ angular.module('tallyprojectApp')
           }
 
           voucherxml += "<AMOUNT>" + roundoff + "</AMOUNT>" +
-            "</ALLLEDGERENTRIES.LIST>"
+            "</ALLLEDGERENTRIES.LIST>";
 
           voucherxml += "<ALLLEDGERENTRIES.LIST>" +
             "<LEDGERNAME>Cash</LEDGERNAME>" +
