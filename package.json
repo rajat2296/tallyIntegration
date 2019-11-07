@@ -14,7 +14,7 @@
     "compression": "~1.0.1",
     "lodash": "~2.4.1",
     "ejs": "~0.8.4",
-    "mongoose": "~4.0.3",
+    "mongoose": "~5.7.8",
     "jsonwebtoken": "^5.0.0",
     "express-jwt": "^3.0.0",
     "passport": "~0.2.0",
